@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """base model module"""
-
 import uuid
 from datetime import datetime
+
+
 class BaseModel:
     """ca base class"""
     def __init__(self):
@@ -18,7 +19,8 @@ class BaseModel:
 
     def __str__(self):
         """prints the name and id"""
-        return ("[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__))
+        return ("[{}] ({}) {}".format(
+                self.__class__.__name__, self.id, self.__dict__))
 
     def to_dict(self):
         """return a dictionary containing all the base class attributes"""
@@ -27,4 +29,3 @@ class BaseModel:
         new_dic["updated_at"] = self.updated_at.isoformat()
         new_dic["__class__"] = self.__class__.__name__
         return new_dic
-        
