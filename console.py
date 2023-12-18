@@ -10,13 +10,13 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
     storage = FileStorage()
 
-    def quit(self, arg):
+    def do_quit(self, arg):
         """Quit command to exit the program"""
         return True
 
-    def EOF(self, arg):
+    def do_EOF(self, arg):
         """EOF command to exit the program"""
-        print()  # Print a newline character
+        print("")
         return True
 
     def emptyline(self):
